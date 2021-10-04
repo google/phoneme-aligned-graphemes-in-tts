@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="./css/strawnet.css">
+  <title>Graphemes in TTS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    table, th, td {
+        border: 1px solid black;
+        min-width:100px;
+        text-align: center; 
+      }
+  </style>
+</head>
+<body>
+    <h2>Improving phonetic realizations in TTS by using phoneme-aligned graphemes</h2>
+
+    <div id="top_div">
+      The audio samples on this page go together with "Improving phonetic realizations in TTS by using phoneme-aligned graphemes", by Manish Sharma, Yizhi Hong, Emily Kaplan, Siamak Tazari and Rob Clark, submitted to ICASSP 2022.<br>
+    </div>
+    <br>
+  
+  <table>
+    <tr>
+      <th>Locale</th>
+      <th>Input text</th>
+      <th></th>
+      <th>WaveRNN</th>
+      <th>WaveNet</th> 
+      <th>CHiVE+Vocaine</th>
+    </tr>
+    <tr class="even_row">
+      <td rowspan="6">en-GB</td>
+      <td rowspan="2">Ellen Pollock</td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/en-gb-1-wr-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-1-wn-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-1-cv-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/en-gb-1-wr-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-1-wn-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-1-cv-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td rowspan="2">Dolphin</td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/en-gb-2-wr-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-2-wn-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-2-cv-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/en-gb-2-wr-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-2-wn-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-2-cv-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td rowspan="2">Into a pot</td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/en-gb-3-wr-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-3-wn-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-3-cv-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/en-gb-3-wr-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-3-wn-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-gb-3-cv-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+
+    <tr class="even_row">
+      <td rowspan="6">en-IN</td>
+      <td rowspan="2">A popular comic</td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/en-in-1-wr-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-1-wn-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-1-cv-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/en-in-1-wr-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-1-wn-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-1-cv-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td rowspan="2">Spanish or Arabic?</td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/en-in-2-wr-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-2-wn-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-2-cv-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/en-in-2-wr-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-2-wn-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-2-cv-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td rowspan="2">Benedict Cumberbatch</td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/en-in-3-wr-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-3-wn-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-3-cv-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/en-in-3-wr-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-3-wn-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-in-3-cv-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+
+    <tr class="even_row">
+      <td rowspan="6">en-US</td>
+      <td rowspan="2">Avoid lying on job application </td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/en-us-1-wr-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-1-wn-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-1-cv-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/en-us-1-wr-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-1-wn-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-1-cv-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td rowspan="2">Forecast for Lubbock</td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/en-us-2-wr-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-2-wn-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-2-cv-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/en-us-2-wr-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-2-wn-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-2-cv-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td rowspan="2">Santa is here</td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/en-us-3-wr-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-3-wn-base.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-3-cv-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/en-us-3-wr-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-3-wn-exp.wav' type="audio/wav" /> </audio></td>
+      <td><audio controls> <source src='audios/en-us-3-cv-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+  </table>
+  <br>
+  Accent fidelity examples from de-DE used for formant analysis in Figure 3.
+  <br>
+  <table>
+    <tr>
+      <th>Sentence</th>
+      <th>Recording</th>
+      <th></th>
+      <th>WaveRNN</th>
+    </tr>
+    <tr class="even_row">
+        <td rowspan="2">Du kannst dir aber einen <b>ähnlichen</b> Mix bei Google Play Musik anhören.</td>
+      <td rowspan="2"><audio controls> <source src='audios/de-de-1-rec.wav' type="audio/wav" /> </audio></td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/de-de-1-wr-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/de-de-1-wr-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+        <td rowspan="2"><b>Qualität.</b></td>
+      <td rowspan="2"><audio controls> <source src='audios/de-de-2-rec.wav' type="audio/wav" /> </audio></td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/de-de-2-wr-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/de-de-2-wr-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+        <td rowspan="2">Beruhigen bedeutet ruhig machen oder <b>allmählich</b> wieder zur Ruhe bringen.</td>
+      <td rowspan="2"><audio controls> <source src='audios/de-de-3-rec.wav' type="audio/wav" /> </audio></td>
+      <td>Baseline</td>
+      <td><audio controls> <source src='audios/de-de-3-wr-base.wav' type="audio/wav" /> </audio></td>
+    </tr>
+    <tr class="even_row">
+      <td>Experiment</td>
+      <td><audio controls> <source src='audios/de-de-3-wr-exp.wav' type="audio/wav" /> </audio></td>
+    </tr>
+  </table>
+<p>
+</body>
+</html>

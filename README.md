@@ -1,0 +1,1 @@
+This repository contains audio samples that go with ICASSP 2022 submission titled: "Improving phonetic realizations in TTS by using phoneme-aligned graphemes", M. Sharma, Y. Hong, E. Kaplan, S. Tazari, R. A. J. Clark.
